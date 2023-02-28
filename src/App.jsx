@@ -5,6 +5,7 @@ import TodoList from "./components/TodoList/TodoList";
 import Footer from "./components/Footer/Footer";
 
 function App() {
+  
   return (
     <div className="App">
       <div className="grid place-items-center bg-blue-100 h-screen px-6 font-sans">
