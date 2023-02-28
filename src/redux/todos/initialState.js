@@ -2,6 +2,7 @@ const initilState = [
   {
     id: 1,
     todo: "Learn redux",
+    color: "green",
     completed: false
   },
   {
