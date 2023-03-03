@@ -1,5 +1,5 @@
 import initilState from "./initialState";
-import { ADDED, TOGGLED, COLORSELECTED, DELETED, ALLCOMPLETED, CLEARCOMPLETED } from "./action.types";
+import { ADDED, TOGGLED, COLORSELECTED, DELETED, ALLCOMPLETED, CLEARCOMPLETED, LOADED } from "./action.types";
 
 function genId(state) {
   const id = state.reduce((result, todo) => Math.max(todo.id, result), 0)
@@ -8,12 +8,17 @@ function genId(state) {
 
 const reducer = (state = initilState, action) => {
   switch (action.type) {
+    case LOADED:
+      return [
+        ...action.payload
+      ];
+
     case ADDED:
       return [
         ...state,
         {
           id: genId(state),
-          todo: action.payload
+          text: action.payload
         }
       ];
 
