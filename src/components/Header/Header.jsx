@@ -3,8 +3,8 @@ import noteImage from "../../assets/notes.png";
 import plusImage from "../../assets/plus.png";
 import tickImage from "../../assets/double-tick.png";
 import { useDispatch } from "react-redux";
+import addTodo from './../../redux/todos/thunk/addTodo';
 import {
-  added,
   allCompleted,
   clearCompleted,
 } from "./../../redux/todos/action";
@@ -19,7 +19,7 @@ const Header = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(added(input));
+    dispatch(addTodo(input));
     setInput("");
   };
 
